@@ -1,0 +1,124 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!--Flask Flashed Messages to User-->
+<div class="container">
+    {% with messages = get_flashed_messages(with_categories = true) %}
+        {% if messages %}
+            {% for cat,msg in messages %}
+                {% if cat == 'user-created'%}
+                    <div class="alert alert-success">
+                        {{ msg }}
+                        <button type="button" class="close" data-dismiss = "alert">&times;</button>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+</div>
+
+<nav class="head">
+    <img src="../../static/images/pebble_beach.jpg" alt="Car Show" class="head-image">
+</nav>
+
+<div class="container" id="header">
+    <header class="row">
+        <div class="col-12 col-md-7" id="header-text">
+            <h2>Let's take the culture of car collecting online</h2>
+            <h5>Use our tools to create an API for car collecting developers.</h5>
+            <div>
+                <button class="btn btn-primary">Docs</button>
+                <button class="btn btn-primary">Slack</button>
+            </div>
+        </div>
+        <!-- header image area
+        <div class="col-12 col-md-5">
+            <img src="../../static/images/BMW_2002.jpg" alt="Toy Cars" class="header-image">
+        </div> -->
+    </header>
+    <!--end of header section-->
+
+    <!--start of middle section-->
+    <section class="row">
+        <div class="col-12" id="middle-text">
+            <h2>Display Your Collection</h2>
+            <li>Harness the power of an API to display and expand your collection</p>
+        </div>
+    </section>
+    <!--end of middle section-->
+
+    <!--start of features section-->
+    <section class="row" id="features-section">
+        <div class="col-12 col-md-4">
+            <img src="../../static/images/api.png" alt="API Image" id="api-image">
+            <h4>Dedicated API Routes</h4>
+            <li>
+                If you are a fan of using a traditional API route, we have those for you!
+            </p>
+        </div>
+        <div class="col-12 col-md-4">
+            <img src="../../static/images/graphql.png" alt="GraphQL Image" id="graphql-image">
+            <h4>GraphQL API Routes</h4>
+            <li>
+                If you want ALL data from one endpoint, we have that, too!
+            </p>
+        </div>
+        <div class="col-12 col-md-4">
+            <img src="../../static/images/db.png" alt="Database Image" id="database-image">
+            <h4>Backed by PostgreSQL Database</h4>
+            <li>
+                All data will be persisted inside a secure Postgres database.
+            </p>
+        </div>
+    </section>
+
+    <!--end of features-->
+
+     <!--start of community-->
+
+     <section class="row" id="community">
+        <div class="col-12 col-md-6">
+            <img src="../../static/images/350x150.png" alt="Car Logo" id="community-image">
+        </div>
+        <div class="col-12 col-md-6">
+            <h4>Talk with like-minded car collectors</h4>
+            <li>
+                Talk with other devs around the world and collab
+                on projects with your data. Join our Slack community and give
+                a star to the project on Github!
+            </p>
+            <div>
+                <button class="btn btn-primary">Github</button>
+                <button class="btn btn-primary">Slack</button>
+            </div>
+        </div>
+    </section>
+    <!--End of community section-->
+
+    <div class="footer">
+        
+        
+            
+        <ul id="horizontal-list" class="footer-list">
+            <div class="col-12 col-md-12">
+                <!-- <div class="footer-text-flex"> -->
+                    <img src="../../static/images/BMW_2002.jpg" alt="Car Logo" id="footer-logo">
+                    <li>Platform</li>
+                    <li>Why Coding Cars</li>
+                    <li>The Coding Cars Project</li>
+                    <li>Donate</li>
+                    <li>Spread the Word</li>
+                    <li>Our Process</li>
+                <!-- </div> -->
+            </div> 
+        </ul>
+        
+    </div>
+
+
+
+
+
+{% endblock content %}
+
